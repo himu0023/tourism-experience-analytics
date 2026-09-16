@@ -1,0 +1,12 @@
+-r requirements.txt
+
+# Testing
+pytest>=9.0,<10.0
+pytest-cov>=6.0,<8.0
+
+# Code Quality
+ruff>=0.8,<1.0
+mypy>=1.13,<2.0
+
+# Type Stubs
+pandas-stubs>=2.2,<3.0
