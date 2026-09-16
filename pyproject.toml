@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "tourism-experience-analytics"
+version = "0.1.0"
+description = "Production-oriented tourism experience analytics, prediction, and recommendation system."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+authors = [
+    { name = "Himanshu Bisht" }
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+exclude = [
+    ".venv",
+    "data",
+    "models",
+    "artifacts",
+    "logs",
+    "notebooks"
+]
+
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "SIM"
+]
+
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+packages = ["tourism"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+disallow_untyped_defs = true
+check_untyped_defs = true
